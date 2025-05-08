@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "wouter";
+import { navigate } from "wouter/use-browser-location";
 import recipeService from "../services/recipeService";
 import fetchService from "../services/fetchService";
 import toast from 'react-hot-toast';
@@ -30,18 +31,26 @@ function EditRecipeView() {
       }, []);
 
   useEffect(() => {
-    const fetchRecipeData = async () => {
-      try {
-        const data = await recipeService.getRecipeById(params._id);
-        setRecipe(data);
-      } catch (error) {
-        setError(error.message || "Failed to fetch recipe");
+      const fetchRecipeData = async () => {
+        try {
+          const recipe = await recipeService.getRecipeById(params._id);
+    
+          if (!recipe || recipe._id.toString() !== params._id.toString()) {
+            navigate("/404");
+            return;
+          }
+    
+          setRecipe(recipe);
+        } catch (error) {
+          setError(error.message || "Failed to fetch recipe");
+          navigate("/404");
+        }
+      };
+    
+      if (params._id) {
+        fetchRecipeData();
       }
-    };
-    if (params._id) {
-      fetchRecipeData();
-    }
-  }, [params._id]);
+    }, [params._id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,7 +62,6 @@ function EditRecipeView() {
 
   const handleNumberChange = (e) => {
     const { name, value } = e.target;
-    // Convert empty string to null to avoid NaN
     const numericValue = value === '' ? null : Number(value);
     setRecipe((prev) => ({
       ...prev,

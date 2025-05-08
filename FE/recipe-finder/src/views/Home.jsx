@@ -25,7 +25,7 @@ function HomeView() {
 
   return (
     <>
-      <div className="flex justify-center items-center bg-[url(images/banner-recipes.jpg)] bg-cover bg-center w-full">
+      <div className="flex justify-center items-center bg-[url(/images/banner_recipes.jpg)] bg-cover bg-center w-full">
         <div>
           <h1 className="font-[Playfair_Display] text-4xl md:text-6xl p-2 font-extrabold bg-gradient-to-r from-black to-orange-400 bg-clip-text text-transparent drop-shadow-lg text-center mt-10">
             Recipe Finder

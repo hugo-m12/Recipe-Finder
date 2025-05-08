@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "wouter";
 import { Link } from "wouter";
+import { navigate } from "wouter/use-browser-location";
 import recipeService from "../services/recipeService";
 
 function EditRecipeView() {
@@ -28,17 +29,25 @@ function EditRecipeView() {
   useEffect(() => {
     const fetchRecipeData = async () => {
       try {
-        const data = await recipeService.getRecipeById(params._id);
-        setRecipe(data);
+        const recipe = await recipeService.getRecipeById(params._id);
+  
+        if (!recipe || recipe._id.toString() !== params._id.toString()) {
+          navigate("/404");
+          return;
+        }
+  
+        setRecipe(recipe);
       } catch (error) {
         setError(error.message || "Failed to fetch recipe");
+        navigate("/404");
       }
     };
+  
     if (params._id) {
       fetchRecipeData();
     }
   }, [params._id]);
-
+  
   useEffect(() => {
     const fetchOtherRecipes = async () => {
       try {

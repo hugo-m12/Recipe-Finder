@@ -4,6 +4,7 @@ import { Route } from "wouter";
 import HomeView from "./views/Home";
 import EditRecipeView from './views/EditRecipeView';
 import CreateRecipeView from './views/CreateRecipeView';
+import Error404View from './views/Error404View';
 import RecipeDetail from './views/RecipeDetails';
 import AdminView from './views/AdminView';
 import LoginView from './views/LoginView';
@@ -35,6 +36,7 @@ function App() {
         <Route path="/Login" component={() => <LoginView onLogin={handleLogin} />} />
         <Route path="/Register" component={RegisterView} />
         <Toaster />
+        <Route path="/404" component={Error404View} />
         <ConfirmProvider>
         <Route exact path="/AdminView" component={AdminView} />
         </ConfirmProvider>
