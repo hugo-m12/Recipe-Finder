@@ -30,7 +30,7 @@ function EditRecipeView() {
     const fetchRecipeData = async () => {
       try {
         const recipe = await recipeService.getRecipeById(params._id);
-  
+        window.scrollTo(0,0)
         if (!recipe || recipe._id.toString() !== params._id.toString()) {
           navigate("/404");
           return;

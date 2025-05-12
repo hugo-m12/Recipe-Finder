@@ -105,7 +105,7 @@ function LoginView({ onLogin }) {
               />
             </div>
             <button
-              className={`w-full h-[45px] rounded-2xl bg-white hover:bg-blue-100 text-black cursor-pointer transition-colors duration-200 ${
+              className={`w-full h-[45px] rounded-2xl bg-white hover:bg-orange-200 text-black cursor-pointer transition-colors duration-200 ${
                 isLoading ? "opacity-70 cursor-not-allowed" : ""
               }`}
               type="submit"

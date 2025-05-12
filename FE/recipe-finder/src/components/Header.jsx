@@ -91,10 +91,10 @@ function Header({ isAuthenticated, onLogout }) {
                     id="search-menu"
                     className="flex flex-col items-center justify-center p-5 space-y-4"
                   >
-                    <div className="rounded-lg bg-gray-200 p-5 w-full max-w-md">
+                    <div className="flex justify-center gap-6 mt-10">
                       <form onSubmit={handleNameSubmit}>
                         <div className="flex mb-3">
-                          <div className="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-gray-200 bg-white p-5">
+                          <div className="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg bg-white p-5">
                             <svg
                               viewBox="0 0 20 20"
                               aria-hidden="true"
@@ -109,8 +109,8 @@ function Header({ isAuthenticated, onLogout }) {
                             type="text"
                             value={searchTerm.name}
                             onChange={handleChange}
-                            className="w-full max-w-[160px] text-black bg-white pl-2 text-base font-semibold outline-0"
-                            placeholder="recipe name"
+                            className="peer w-full py-3 pl-12 pr-4 text-gray-900 rounded-tl-lg rounded-bl-lg bg-white border border-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-orange-300"
+                            placeholder="Search Recipes..."
                           />
 
                           <button
@@ -125,7 +125,7 @@ function Header({ isAuthenticated, onLogout }) {
                     
                       <form onSubmit={handleIngredientSubmit}>
                         <div className="flex">
-                          <div className="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-gray-200 bg-white p-5">
+                          <div className="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg bg-white p-5">
                             <svg
                               viewBox="0 0 20 20"
                               aria-hidden="true"
@@ -140,8 +140,8 @@ function Header({ isAuthenticated, onLogout }) {
                             type="text"
                             value={searchTerm.ingredients}
                             onChange={handleChange}
-                            className="w-full max-w-[160px] text-black bg-white pl-2 text-base font-semibold outline-0"
-                            placeholder="ingredient"
+                            className="peer w-full py-3 pl-12 pr-4 rounded-tl-lg rounded-bl-lg text-gray-900 bg-white border border-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-orange-300"
+                            placeholder="Search Ingredients..."
                           />
 
                           <button

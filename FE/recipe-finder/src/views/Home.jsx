@@ -36,8 +36,8 @@ function HomeView() {
         </div>
       </div>
       <div className="flex justify-center items-center min-h-screen bg-gradient-to-tr from-white to-orange-200">
-        <div className="overflow-x-auto bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl">
-          <h3 className="text-center text-4xl font-extrabold mb-5 font-[Playwrite_AU_SA] 
+        <div className="overflow-x-auto bg-white p-10 rounded-lg shadow-lg h-auto w-[1000px]">
+          <h3 className="text-center text-5xl font-extrabold mb-8 font-[Playwrite_AU_SA] 
                text-black
                bg-clip-text 
                drop-shadow-md transition-transform duration-300 hover:scale-105 hover:drop-shadow-lg">
@@ -52,7 +52,7 @@ function HomeView() {
               </div>
             ))}
           </div>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center mt-5">
           <button
             onClick={handleLoadMore}
             className="bg-orange-300 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded-full mt-7 p-5"

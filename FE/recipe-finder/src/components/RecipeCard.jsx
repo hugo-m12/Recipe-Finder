@@ -8,7 +8,7 @@ function RecipeCard({ recipes }) {
       };
 
   return (
-    <div className="recipecard" key={recipes._id}>
+    <div className="recipecard hover:z-10" key={recipes._id}>
       <div className="card-details">
         <p className="font-[Signika_Negative] text-title">{recipes.name}</p>
         <p>{recipes.mealType}</p>
