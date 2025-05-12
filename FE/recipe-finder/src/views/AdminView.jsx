@@ -5,13 +5,20 @@ import { Link } from "wouter";
 import { useConfirm } from "material-ui-confirm";
 import recipeService from "../services/recipeService";
 import fetchService from "../services/fetchService";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 function AdminView() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [, setError] = useState(null);
   const confirm = useConfirm();
+  const [currentPage, setCurrentPage] = useState(0);
+  const recipesPerPage = 10;
+
+  const indexOfLastRecipe = (currentPage + 1) * recipesPerPage;
+  const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
+  const currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
+  const totalPages = Math.ceil(recipes.length / recipesPerPage);
 
   useEffect(function () {
     (async function () {
@@ -21,14 +28,13 @@ function AdminView() {
       }
     })();
   }, []);
-  
+
   useEffect(function () {
     (async function () {
       const result = await recipeService.getAllRecipes();
       setRecipes(result);
     })();
   }, []);
-  
 
   async function handleDelete(id) {
     try {
@@ -43,7 +49,7 @@ function AdminView() {
 
         toast.success("Recipe was deleted", {
           duration: 3000,
-          position: 'top-center'
+          position: "top-center",
         });
 
         setRecipes((prevRecipes) =>
@@ -58,6 +64,10 @@ function AdminView() {
       setLoading(false);
     }
   }
+
+  const goToPage = (pageIndex) => {
+    setCurrentPage(pageIndex);
+  };
 
   return (
     <>
@@ -86,7 +96,7 @@ function AdminView() {
               </tr>
             </thead>
             <tbody>
-              {recipes.map((recipe) => (
+              {currentRecipes.map((recipe) => (
                 <tr className="hover:bg-gray-200" key={recipe._id}>
                   <td className="py-3 px-4 border-b border-gray-300">
                     {recipe.name}
@@ -119,6 +129,21 @@ function AdminView() {
               ))}
             </tbody>
           </table>
+          <div className="flex justify-center mt-4 gap-2">
+            {[...Array(totalPages).keys()].map((pageIndex) => (
+              <button
+                key={pageIndex}
+                onClick={() => goToPage(pageIndex)}
+                className={`py-1 px-3 rounded-full font-semibold ${
+                  currentPage === pageIndex
+                    ? "bg-indigo-600 text-white"
+                    : "bg-gray-300 text-gray-800 hover:bg-gray-400"
+                }`}
+              >
+                {pageIndex + 1}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </>

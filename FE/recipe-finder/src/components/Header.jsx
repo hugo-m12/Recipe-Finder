@@ -163,7 +163,7 @@ function Header({ isAuthenticated, onLogout }) {
                             className="hover:bg-gray-200 cursor-pointer"
                           >
                             <td className="py-3 px-4 text-black border-b border-gray-300">
-                              <Link href={`/RecipeDetails/${recipe._id}`}>
+                              <Link onClick={() => setIsOpen(!isOpen)} href={`/RecipeDetails/${recipe._id}`}>
                                 <div>{recipe.name}</div>
                               </Link>
                             </td>
