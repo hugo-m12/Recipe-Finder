@@ -23,6 +23,7 @@ function Header({ isAuthenticated, onLogout }) {
 
   const handleNameSubmit = async (e) => {
     e.preventDefault();
+    
     try {
       setLoading(true);
       setError(null);
@@ -33,6 +34,7 @@ function Header({ isAuthenticated, onLogout }) {
         setSuccessMessage("");
       }, 4000);
     } catch (err) {
+      setRecipes([]);
       setError(err.message || "No recipes found");
     } finally {
       setLoading(false);
@@ -40,6 +42,7 @@ function Header({ isAuthenticated, onLogout }) {
   };
   const handleIngredientSubmit = async (e) => {
     e.preventDefault();
+
     try {
       setLoading(true);
       setError(null);
@@ -50,6 +53,7 @@ function Header({ isAuthenticated, onLogout }) {
         setSuccessMessage("");
       }, 4000);
     } catch (err) {
+      setRecipes([]);
       setError(err.message || "No recipes found");
     } finally {
       setLoading(false);
@@ -78,7 +82,11 @@ function Header({ isAuthenticated, onLogout }) {
             <li>
               <div>
                 <button
-                  onClick={() => setIsOpen(!isOpen)}
+                  onClick={() => {
+                  setIsOpen(!isOpen);
+                  setRecipes([]);
+                  setSearchTerm("");
+                }}
                   className="text-gray-400 no-underline transition-colors duration-300 hover:text-black hover:underline ml-2"
                   aria-expanded={isOpen}
                   aria-label="Toggle search bar"
