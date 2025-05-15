@@ -11,9 +11,9 @@ import LoginView from './views/LoginView';
 import './App.css';
 import { ConfirmProvider } from 'material-ui-confirm';
 import { Toaster } from 'react-hot-toast';
-import Header from './components/header';
+import Header from './components/Header';
 import storeService from './services/storeService';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 import RegisterView from './views/RegisterView';
 
 function App() {
