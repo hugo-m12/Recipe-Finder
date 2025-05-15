@@ -84,7 +84,7 @@ function EditRecipeView() {
 
   const handleLikeButton = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/recipes/${params._id}`);
+      const response = await fetch(`https://recipe-finder-api-i9z8.onrender.com/api/recipes/${params._id}`);
       const recipe = await response.json();
       
       const currentCount = recipe.likeCount ?? 0;
@@ -93,7 +93,7 @@ function EditRecipeView() {
       const newCount = currentCount + 1;
       setLikeCount(newCount);
       
-      const patchResponse = await fetch(`http://localhost:3000/api/recipes/${params._id}`, {
+      const patchResponse = await fetch(`https://recipe-finder-api-i9z8.onrender.com/api/recipes/${params._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

@@ -1,6 +1,6 @@
 async function getAllRecipes() { 
     try {
-        const response = await fetch(`http://localhost:3000/api/recipes`);
+        const response = await fetch(`https://recipe-finder-api-i9z8.onrender.com/api/recipes`);
         const result = await response.json();
         return(result);
 
@@ -12,7 +12,7 @@ async function getAllRecipes() {
 
   async function getLikedRecipes() {
     try {
-      const response = await fetch(`http://localhost:3000/api/recipes/liked`);
+      const response = await fetch(`https://recipe-finder-api-i9z8.onrender.com/api/recipes/liked`);
       const result = await response.json();
       return(result);
 
@@ -27,7 +27,7 @@ async function getAllRecipes() {
         const params = new URLSearchParams();
         if (name) params.append('name', name);
 
-        const url = `http://localhost:3000/api/recipes/search?${params.toString()}`;
+        const url = `https://recipe-finder-api-i9z8.onrender.com/api/recipes/search?${params.toString()}`;
 
         const response = await fetch(url);
         
@@ -48,7 +48,7 @@ async function searchRecipeByIngredient (ingredients) {
       const params = new URLSearchParams();
       if (ingredients) params.append('ingredients', ingredients);
 
-      const url = `http://localhost:3000/api/recipes/search?${params.toString()}`;
+      const url = `https://recipe-finder-api-i9z8.onrender.com/api/recipes/search?${params.toString()}`;
 
       const response = await fetch(url);
       
@@ -66,7 +66,7 @@ async function searchRecipeByIngredient (ingredients) {
 
   async function getRecipeById(id) { 
     try {
-        const response = await fetch(`http://localhost:3000/api/recipes/${id}`);
+        const response = await fetch(`https://recipe-finder-api-i9z8.onrender.com/api/recipes/${id}`);
         const result = await response.json();
         return(result);
 
@@ -78,7 +78,7 @@ async function searchRecipeByIngredient (ingredients) {
 
   async function createRecipe(data) {
     try {
-      const response = await fetch(`http://localhost:3000/api/recipes/`, {
+      const response = await fetch(`https://recipe-finder-api-i9z8.onrender.com/api/recipes/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -100,7 +100,7 @@ async function searchRecipeByIngredient (ingredients) {
 
   async function updateRecipeById(id, data) {
     try {
-      const response = await fetch(`http://localhost:3000/api/recipes/${id}`, {
+      const response = await fetch(`https://recipe-finder-api-i9z8.onrender.com/api/recipes/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -122,7 +122,7 @@ async function searchRecipeByIngredient (ingredients) {
 
   async function deleteRecipeById(id) {
     try {
-      const response = await fetch(`http://localhost:3000/api/recipes/${id}`, {
+      const response = await fetch(`https://recipe-finder-api-i9z8.onrender.com/api/recipes/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'

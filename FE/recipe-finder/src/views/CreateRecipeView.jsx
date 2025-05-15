@@ -29,7 +29,7 @@ function AddRecipeView() {
 
   useEffect(function () {
       (async function () {
-        const data = await fetchService.get("http://localhost:3000/admin", true);
+        const data = await fetchService.get("https://recipe-finder-api-i9z8.onrender.com/admin", true);
         if (!data) {
           window.location = "/login";
         }

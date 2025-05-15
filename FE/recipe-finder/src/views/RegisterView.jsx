@@ -1,8 +1,9 @@
 import React from "react";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { navigate } from "wouter/use-browser-location";
+import fetchService from "../services/fetchService";
 import toast from 'react-hot-toast';
 
 function RegisterView() {
@@ -19,7 +20,7 @@ function RegisterView() {
     setError('');
   
     try {
-      const response = await fetch('http://localhost:3000/api/register', {
+      const response = await fetch('https://recipe-finder-api-i9z8.onrender.com/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email.trim(), password: password })
@@ -50,6 +51,14 @@ function RegisterView() {
     }
   };
 
+  useEffect(function () {
+            (async function () {
+              const data = await fetchService.get("https://recipe-finder-api-i9z8.onrender.com/admin", true);
+              if (data) {
+                window.location = "/AdminView";
+              }
+            })();
+          }, []);
 
   return (
     <>
@@ -99,7 +108,7 @@ function RegisterView() {
                     type="submit"
                     disabled={isLoading}
                   >
-                    {isLoading ? "Logging in..." : "Register"}
+                    {isLoading ? "Registering User..." : "Register"}
                   </button>
                   <div className="text-center">
                     <h3

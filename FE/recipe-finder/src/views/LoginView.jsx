@@ -31,7 +31,7 @@ function LoginView({ onLogin }) {
   
     try {
       const result = await fetchService.post(
-        "http://localhost:3000/api/login",
+        "https://recipe-finder-api-i9z8.onrender.com/api/login",
 
         {
           email: formData.email,
