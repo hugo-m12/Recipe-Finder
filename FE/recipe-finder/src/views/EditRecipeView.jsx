@@ -177,7 +177,7 @@ function EditRecipeView() {
             placeholder="Difficulty"
           />
 
-          <label>Like Count</label> {/*fix the update count later*/}
+          <label>Like Count</label> 
           <input 
           name="likeCount"
           type="number"
@@ -192,6 +192,7 @@ function EditRecipeView() {
           {recipe.ingredients.map((ingredient, index) => (
             <div key={index} className="flex gap-2">
               <input
+                required
                 type="text"
                 name={`ingredients-${index}`}
                 value={ingredient}

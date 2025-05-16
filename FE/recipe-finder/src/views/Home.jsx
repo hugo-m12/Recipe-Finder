@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import recipeService from "../services/recipeService";
 import RecipeCard from "../components/RecipeCard";
+import LoadingAnim from "../components/LoadingAnim";
 
 function HomeView() {
   const [recipes, setRecipes] = useState([]);
@@ -43,7 +44,8 @@ function HomeView() {
                drop-shadow-md transition-transform duration-300 hover:scale-105 hover:drop-shadow-lg">
             Chef's Picks 
           </h3>
-          <div className="flex flex-wrap gap-2 justify-evenly">
+          {recipes && recipes.length > 0 ? (
+            <div className="flex flex-wrap gap-2 justify-evenly">
             {displayedData.map((value) => (
               <div key={value._id}>
                 <Link href={`/RecipeDetails/${value._id}`}>
@@ -52,6 +54,11 @@ function HomeView() {
               </div>
             ))}
           </div>
+          ) : (
+            <div className="flex items-center justify-center p-20">
+            <LoadingAnim />
+          </div>
+          )}
           <div className="flex justify-center items-center mt-5">
           <button
             onClick={handleLoadMore}
