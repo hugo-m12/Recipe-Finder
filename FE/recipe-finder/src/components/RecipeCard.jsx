@@ -13,7 +13,7 @@ function RecipeCard({ recipes }) {
         <p className="font-[Signika_Negative] text-title">{recipes.name}</p>
         <p>{recipes.mealType}</p>
         <p>{recipes.difficulty}</p>
-        <img src={recipes.thumbnail} alt="recipe img" />
+        <img src={recipes.thumbnail} alt="Loading..."/>
       </div>
       <button className="recipecard-button">More info</button>
     </div>

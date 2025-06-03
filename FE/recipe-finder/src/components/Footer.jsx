@@ -7,7 +7,7 @@ function Footer(){
     <>
         <footer className="bg-black text-white text-center p-12"> 
             <nav> 
-            <p> Copyright © 2024 | All Rights Reserved </p>
+            <p> Copyright © 2025 | All Rights Reserved </p>
                 <div className="flex justify-center mt-5 gap-5">
                    <a className='no-underline text-inherit' href='https://www.instagram.com/shots_by_hugomoreira/' rel="noreferrer" target="_blank">
                         <FontAwesomeIcon className="fa-2xl" icon={faInstagram} />
