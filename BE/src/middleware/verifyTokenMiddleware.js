@@ -1,4 +1,4 @@
-const jwtService = require("../services/jwtService");
+const jwtService = require("../services/jwt-service");
 
 function verifyToken(req, res, next) {
     const authValue = req.get('authorization');

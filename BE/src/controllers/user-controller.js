@@ -1,5 +1,5 @@
 const userService = require('../services/user-service')
-const jwtService = require("../services/jwtService")
+const jwtService = require("../services/jwt-service")
 
 async function findAllUsers(req, res) {
 	const result = await userService.findAllUsers()

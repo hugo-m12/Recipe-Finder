@@ -8,6 +8,7 @@ import fetchService from "../services/fetchService";
 import toast from "react-hot-toast";
 
 function AdminView() {
+  const url = "https://recipe-finder-api-i9z8.onrender.com";
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [, setError] = useState(null);
@@ -22,7 +23,7 @@ function AdminView() {
 
   useEffect(function () {
     (async function () {
-      const data = await fetchService.get("https://recipe-finder-api-i9z8.onrender.com/admin", true);
+      const data = await fetchService.get(`${url}/admin`, true);
       if (!data) {
         window.location = "/login";
       }

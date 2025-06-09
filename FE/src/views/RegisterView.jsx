@@ -7,6 +7,9 @@ import fetchService from "../services/fetchService";
 import toast from 'react-hot-toast';
 
 function RegisterView() {
+
+  const url = "https://recipe-finder-api-i9z8.onrender.com"
+
   const userRef = useRef();
   const errRef = useRef();
   const [email, setEmail] = useState("");
@@ -20,7 +23,7 @@ function RegisterView() {
     setError('');
   
     try {
-      const response = await fetch('https://recipe-finder-api-i9z8.onrender.com/api/register', {
+      const response = await fetch(`${url}/api/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email.trim(), password: password })
@@ -53,7 +56,7 @@ function RegisterView() {
 
   useEffect(function () {
             (async function () {
-              const data = await fetchService.get("https://recipe-finder-api-i9z8.onrender.com/admin", true);
+              const data = await fetchService.get(`${url}/admin`, true);
               if (data) {
                 window.location = "/AdminView";
               }

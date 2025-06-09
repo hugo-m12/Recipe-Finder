@@ -9,6 +9,8 @@ import toast from 'react-hot-toast';
 
 
 function LoginView({ onLogin }) {
+
+  const url = "https://recipe-finder-api-i9z8.onrender.com/api";
   const userRef = useRef();
   const errRef = useRef();
   const [error, setError] = useState("");
@@ -31,7 +33,7 @@ function LoginView({ onLogin }) {
   
     try {
       const result = await fetchService.post(
-        "https://recipe-finder-api-i9z8.onrender.com/api/login",
+        `${url}/login`,
 
         {
           email: formData.email,
