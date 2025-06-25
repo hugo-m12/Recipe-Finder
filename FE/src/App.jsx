@@ -8,7 +8,6 @@ import Error404View from './views/Error404View';
 import RecipeDetail from './views/RecipeDetails';
 import AdminView from './views/AdminView';
 import LoginView from './views/LoginView';
-import './App.css';
 import { ConfirmProvider } from 'material-ui-confirm';
 import { Toaster } from 'react-hot-toast';
 import Header from './components/Header';
