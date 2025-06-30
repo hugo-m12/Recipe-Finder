@@ -105,6 +105,7 @@ function AddRecipeView() {
         className="max-w-md mx-auto p-8 bg-white shadow-lg rounded-lg space-y-6"
         >
         <div className="space-y-4">
+          <label>Name</label>
           <input
             required
             name="name"
@@ -113,7 +114,7 @@ function AddRecipeView() {
             className="w-full h-10 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Recipe Name"
             />
-
+          <label>Meal Type</label>
           <input
             required
             name="mealType"
@@ -122,6 +123,7 @@ function AddRecipeView() {
             className="w-full h-10 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Meal Type"
             />
+          <label>Preparation Time</label>
           <input
             required
             name="preparationTime"
@@ -130,6 +132,7 @@ function AddRecipeView() {
             className="w-full h-10 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Preparation Time"
             />
+          <label>Nutritional Value</label>
           <input
             required
             name="nutritionalValue"
@@ -138,6 +141,7 @@ function AddRecipeView() {
             className="w-full h-10 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Nutritional Value"
             />
+          <label>Difficulty</label>
           <input
             name="difficulty"
             value={recipe.difficulty}
@@ -175,6 +179,7 @@ function AddRecipeView() {
             Add Ingredient
           </button>
         </div> 
+        <label>Directions</label>
           <textarea
             required
             name="directions"
