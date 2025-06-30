@@ -99,13 +99,12 @@ function AddRecipeView() {
       <h1 className="text-4xl text-center font-semibold text-gray-700 mt-10 mb-4">
         Create Recipe
       </h1>
-<div className="text-center">
       <form
         onSubmit={handleSubmit}
         className="max-w-md mx-auto p-8 bg-white shadow-lg rounded-lg space-y-6"
         >
         <div className="space-y-4">
-          <label>Name</label>
+          <label className="text-left">Name</label>
           <input
             required
             name="name"
@@ -206,7 +205,6 @@ function AddRecipeView() {
           </button>
         </div>
       </form>
-    </div>
   <div className="mb-[143px]"></div>
   </>
   );
