@@ -65,8 +65,8 @@ function RegisterView() {
 
   return (
     <>
-    <div className="overflow-x-auto bg-white rounded-lg min-h-screen mb-7">
-      <div className="font-[Poppins] container mx-auto flex justify-center items-center min-h-screen bg-gradient-to-r from-gray-200 to-blue-600 bg-no-repeat bg-cover bg-center">
+    <div className="flex flex-1 overflow-x-auto bg-white rounded-lg">
+      <div className="font-[Poppins] container mx-auto flex flex-1 justify-center items-center bg-gradient-to-r from-gray-200 to-blue-600 bg-no-repeat bg-cover bg-center py-8">
               <div className="w-[420px] bg-transparent backdrop-blur-2xl text-white p-6 rounded-2xl shadow-lg">
                 <form action="" onSubmit={handleSubmit} className="space-y-6">
                   <h1 className="text-[36px] text-center font-bold tracking-tight">

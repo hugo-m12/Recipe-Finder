@@ -72,7 +72,7 @@ function AdminView() {
 
   return (
     <>
-      <div className="flex justify-center items-center min-h-screen bg-gradient-to-tr from-sky-200 to-blue-400">
+      <div className="flex flex-1 justify-center items-center bg-gradient-to-tr from-sky-200 to-blue-400 py-8">
         <div className="overflow-x-auto bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl m-4">
           <h3 className="text-center text-4xl font-bold mb-5">Welcome Admin</h3>
           <div className="flex justify-end">

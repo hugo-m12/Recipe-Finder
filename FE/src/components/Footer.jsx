@@ -4,8 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Footer(){
     return (
-    <>
-        <footer className="bg-black text-white text-center p-12"> 
+        <footer className="mt-auto bg-black text-white text-center p-12"> 
             <nav> 
             <p> Copyright © 2025 | All Rights Reserved </p>
                 <div className="flex justify-center mt-5 gap-5">
@@ -21,7 +20,6 @@ function Footer(){
                 </div>
             </nav>
         </footer>
-    </>
     )
 }
 

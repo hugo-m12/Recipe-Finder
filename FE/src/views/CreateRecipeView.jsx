@@ -205,7 +205,6 @@ function AddRecipeView() {
           </button>
         </div>
       </form>
-  <div className="mb-[143px]"></div>
   </>
   );
 }

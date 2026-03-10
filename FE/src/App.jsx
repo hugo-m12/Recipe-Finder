@@ -29,8 +29,9 @@ function App() {
   };
 
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Header isAuthenticated={isAuthenticated} onLogout={handleLogout} />
+      <main className="flex flex-1 flex-col">
         <Route exact path="/" component={HomeView} />
         <Route path="/Login" component={() => <LoginView onLogin={handleLogin} />} />
         <Route path="/Register" component={RegisterView} />
@@ -42,8 +43,9 @@ function App() {
         <Route path="/EditRecipe/:_id" component={EditRecipeView} />
         <Route path="/CreateRecipe" component={CreateRecipeView} />
         <Route path="/RecipeDetails/:_id" component={RecipeDetail} />
+      </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

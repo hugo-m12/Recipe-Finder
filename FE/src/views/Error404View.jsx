@@ -3,7 +3,7 @@ import React from "react";
 function Error404View() {
   return (
     <>
-      <div className="text-center flex justify-center items-center min-h-screen">
+      <div className="flex flex-1 justify-center items-center text-center py-8">
         <div className="text-center">
           <h1 className="text-9xl font-black text-orange-200">404</h1>
           <p className="mb-4">Uh-oh!</p>

@@ -246,7 +246,6 @@ function EditRecipeView() {
           </button>
         </div>
       </form>
-      <div className="mb-[27px]"></div>
     </>
   );
 }
